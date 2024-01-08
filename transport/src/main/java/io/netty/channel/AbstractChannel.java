@@ -25,7 +25,6 @@ import io.netty.util.internal.PlatformDependent;
 import io.netty.util.internal.UnstableApi;
 import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
-
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.InetSocketAddress;
@@ -1105,16 +1104,13 @@ public abstract class AbstractChannel extends DefaultAttributeMap implements Cha
 
     /**
      * Deregister the {@link Channel} from its {@link EventLoop}.
-     *
-     * Sub-classes may override this method
+     * Subclasses may override this method
      */
     protected void doDeregister() throws Exception {
         // NOOP
     }
 
-    /**
-     * Schedule a read operation.
-     */
+    /** Schedule a read operation. */
     protected abstract void doBeginRead() throws Exception;
 
     /**
